@@ -1,52 +1,51 @@
 const express = require("express");
 const router = express.Router();
-const usuarioSchema = require("../models/usuario");
+const enfermedadSchema = require("../models/enfermedad");
 const { error } = require("console");
 
 module.exports = router; 
 
 //get usuario
-router.get("/usuarios", (req, res)=>{
-    usuarioSchema
+router.get("/enfermedades", (req, res)=>{
+    enfermedadSchema
         .find()
         .then((data)=> res.json(data))
         .catch((error) => res.json({message: error}))
 });
 
-//get un usuario
-router.get("/usuarios/:id", (req, res)=>{
+//get una enfermedad
+router.get("/enfermedades/:id", (req, res)=>{
     const {id} = req.params;
-    usuarioSchema
+    enfermedadSchema
         .findById(id)
         .then((data)=> res.json(data))
         .catch((error) => res.json({message: error}))
 });
 
-//create user
-router.post("/usuarios", (req, res)=>{
-    const user = usuarioSchema(req.body);
-    user
+//create enfermedad
+router.post("/enfermedades", (req, res)=>{
+    const enfermedad = enfermedadSchema(req.body);
+    enfermedad
         .save()
         .then((data)=> res.json(data))
         .catch((error)=> res.json({ message:error }));
 })
 
-//update user
-router.put("/usuarios/:id", (req, res)=>{
+//update enfermedad
+router.put("/enfermedades/:id", (req, res)=>{
     const {id} = req.params;
-    const {nombre, usuario, password, rol} = req.body;
-    usuarioSchema
-        .updateOne({_id:id},{$set:{nombre, usuario, password, rol}})
+    const {nombre, observaciones} = req.body;
+    enfermedadSchema
+        .updateOne({_id:id},{$set:{nombre, observaciones}})
         .then((data)=> res.json(data))
         .catch((error) => res.json({message: error}))
 });
 
-
-router.delete("/usuarios/:id", (req, res)=>{
+//delete enfermedad
+router.delete("/enfermedades/:id", (req, res)=>{
     const {id} = req.params;
-    usuarioSchema
+    enfermedadSchema
         .findOneAndRemove({_id:id})
         .then((data)=> res.json(data))
         .catch((error) => res.json({message: error}))
 });
-

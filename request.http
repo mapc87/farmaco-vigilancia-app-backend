@@ -12,6 +12,9 @@ Content-Type: application/json
 ###
 GET http://localhost:3000/api/usuarios 
 
+###
+GET http://localhost:3000/api/enfermedades
+
 
 ###
 GET http://localhost:3000/api/usuarios/642bb040bdc919c2df5e9236

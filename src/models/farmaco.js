@@ -1,0 +1,30 @@
+const mongoose = require("mongoose");
+
+const farmacoSchema = mongoose.Schema({
+    nombre:{
+        type: String,
+        required:true
+    },
+    casa:{
+        type: String,
+        required:true
+    },
+    efectosAdversos:{
+        type: String,
+        required:true
+    },
+    efectosAdversos:{
+        type: Array,
+        required:true
+    },
+    efectosAdversosNoReportados:{
+        type: Array,
+        required:true
+    },
+    observaciones:{
+        type: String,
+        required:true
+    }
+});
+
+module.exports = mongoose.model('farmacos', farmacoSchema);
