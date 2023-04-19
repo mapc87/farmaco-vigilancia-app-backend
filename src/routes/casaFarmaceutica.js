@@ -24,6 +24,7 @@ router.get("/casaFarmaceutica/:id", (req, res)=>{
 
 //create enfermedad
 router.post("/casaFarmaceutica", (req, res)=>{
+    console.log("servicio")
     const casaFarmaceutica = casaFarmaceuticaSchema(req.body);
     casaFarmaceutica
         .save()

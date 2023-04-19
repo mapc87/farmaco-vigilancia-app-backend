@@ -1,7 +1,7 @@
 const express = require("express");
-const router = express.Router();
 const farmacoSchema = require("../models/farmaco");
-const { error } = require("console");
+const router = express.Router();
+
 
 module.exports = router; 
 
@@ -24,8 +24,8 @@ router.get("/farmaco/:id", (req, res)=>{
 
 //create enfermedad
 router.post("/farmaco", (req, res)=>{
-    const efectoAdverso = farmacoSchema(req.body);
-    efectoAdverso
+    const farmaco = farmacoSchema(req.body);
+    farmaco
         .save()
         .then((data)=> res.json(data))
         .catch((error)=> res.json({ message:error }));

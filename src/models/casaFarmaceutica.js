@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const casaFarmaceuticaSchema = mongoose.Schema({
-    efectoAdverso:{
+    nombre:{
         type: String,
         required:true
     },
@@ -11,4 +11,4 @@ const casaFarmaceuticaSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('casaFarmaceutica', casaFarmaceuticaSchema);
+module.exports = mongoose.model('casasFarmaceuticas', casaFarmaceuticaSchema);

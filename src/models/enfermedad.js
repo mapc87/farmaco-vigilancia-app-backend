@@ -11,4 +11,4 @@ const enfermedadSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('enfermedad', enfermedadSchema);
+module.exports = mongoose.model('enfermedades', enfermedadSchema);
