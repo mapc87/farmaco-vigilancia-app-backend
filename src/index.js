@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors")
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/usuario");
 const enfermedadRoutes = require("./routes/enfermedad");
@@ -6,9 +7,13 @@ const casaFarmaceuticaRoutes = require("./routes/casaFarmaceutica");
 const efectoAdversoRoutes = require("./routes/enfectoAdverso");
 const farmacoRoutes = require("./routes/farmaco");
 
+
+
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors());
 
 //middleware
 app.use(express.json());

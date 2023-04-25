@@ -5,18 +5,18 @@ const farmacoSchema = mongoose.Schema({
         type: String,
         required:true
     },
-    // casa:{
-    //     type: String,
-    //     required:true
-    // },
-    // efectosAdversos:{
-    //     type: String,
-    //     required:true
-    // },
-    // efectosAdversosNoReportados:{
-    //     type: Array,
-    //     required: false
-    // },
+    casa:{
+        type: String,
+        required:true
+    },
+    efectosAdversos:{
+        type: Array,
+        required:true
+    },
+    efectosAdversosNoReportados:{
+        type: Array,
+        required: false
+    },
     observaciones:{
         type: String,
         required:false

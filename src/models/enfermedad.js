@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const enfermedadSchema = mongoose.Schema({
     nombre:{
         type: String,
-        required:true
+        required:false
     },
     observaciones:{
         type: String,
-        required:true
+        required:false
     }
 });
 
