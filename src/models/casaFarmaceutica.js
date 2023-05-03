@@ -8,6 +8,10 @@ const casaFarmaceuticaSchema = mongoose.Schema({
     observaciones:{
         type: String,
         required:true
+    },
+    estado:{
+        type: Boolean,
+        required:true
     }
 });
 

@@ -8,6 +8,10 @@ const efectosAdversosSchema = mongoose.Schema({
     observaciones:{
         type: String,
         required:true
+    },
+    estado:{
+        type:Boolean,
+        required:true
     }
 });
 

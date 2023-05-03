@@ -20,6 +20,10 @@ const farmacoSchema = mongoose.Schema({
     observaciones:{
         type: String,
         required:false
+    },
+    estado: {
+        type: Boolean,
+        required: false
     }
 });
 

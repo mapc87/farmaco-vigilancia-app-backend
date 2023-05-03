@@ -5,7 +5,7 @@ const { error } = require("console");
 
 module.exports = router; 
 
-//get usuario
+//get farmaceutica
 router.get("/casaFarmaceutica", (req, res)=>{
     casaFarmaceuticaSchema
         .find()
@@ -13,7 +13,7 @@ router.get("/casaFarmaceutica", (req, res)=>{
         .catch((error) => res.json({message: error}))
 });
 
-//get una enfermedad
+//get una farmaceutica
 router.get("/casaFarmaceutica/:id", (req, res)=>{
     const {id} = req.params;
     casaFarmaceuticaSchema
@@ -22,7 +22,7 @@ router.get("/casaFarmaceutica/:id", (req, res)=>{
         .catch((error) => res.json({message: error}))
 });
 
-//create enfermedad
+//create farmaceutica
 router.post("/casaFarmaceutica", (req, res)=>{
     console.log("servicio")
     const casaFarmaceutica = casaFarmaceuticaSchema(req.body);
@@ -32,17 +32,18 @@ router.post("/casaFarmaceutica", (req, res)=>{
         .catch((error)=> res.json({ message:error }));
 })
 
-//update enfermedad
+//update casa farmaceutica
 router.put("/casaFarmaceutica/:id", (req, res)=>{
+    console.log(req)
     const {id} = req.params;
-    const {nombre, observaciones} = req.body;
+    const {nombre, observaciones, estado} = req.body;
     casaFarmaceuticaSchema
-        .updateOne({_id:id},{$set:{nombre, observaciones}})
+        .updateOne({_id:id},{$set:{nombre, observaciones, estado}})
         .then((data)=> res.json(data))
         .catch((error) => res.json({message: error}))
 });
 
-//delete enfermedad
+//delete farmaceutica
 router.delete("/casaFarmaceutica/:id", (req, res)=>{
     const {id} = req.params;
     casaFarmaceuticaSchema
