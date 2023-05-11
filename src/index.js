@@ -25,6 +25,7 @@ app.use("/api",farmacoRoutes);
 
 mongoose.connect(
     process.env.MONGODB_URI
+    //'mongodb://0.0.0.0:27017/farmacoVigilanciaApp'
 ).then (()=> {
     console.log("connected to mongodb atlas");
 }).catch((error)=>{
