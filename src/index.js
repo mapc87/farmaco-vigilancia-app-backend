@@ -6,8 +6,7 @@ const enfermedadRoutes = require("./routes/enfermedad");
 const casaFarmaceuticaRoutes = require("./routes/casaFarmaceutica");
 const efectoAdversoRoutes = require("./routes/enfectoAdverso");
 const farmacoRoutes = require("./routes/farmaco");
-
-
+const pacienteRoutes = require("./routes/paciente")
 
 require("dotenv").config();
 const app = express();
@@ -22,6 +21,7 @@ app.use("/api",enfermedadRoutes);
 app.use("/api",casaFarmaceuticaRoutes);
 app.use("/api",efectoAdversoRoutes);
 app.use("/api",farmacoRoutes);
+app.use("/api",pacienteRoutes)
 
 mongoose.connect(
     process.env.MONGODB_URI

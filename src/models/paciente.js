@@ -23,51 +23,54 @@ const pacienteSchema = mongoose.Schema({
     },
     deptoNacimiento:{
         type: String,
-        required:true
+        required:false
     },
     deptoResidencia:{
         type: String,
-        required:true
+        required:false
+    },
+    municipioNacimiento:{
+        type: String,
+        required:false
+    },
+    municipioResidencia:{
+        type: String,
+        required:false
     },
     direccion:{
         type: String,
-        required:true
+        required:false
     },
     telefono:{
         type: String,
-        required:true
+        required:false
     },
     nombreEncargado:{
         type: String,
-        required:true
+        required:false
     },
     telefonoEncargado:{
         type: String,
-        required:true
+        required:false
+    },    
+    fechaIngreso:{
+        type: Date,
+        required:false
     },
-    estadioEnfermedad:{
+    datosClinicos:[
+        {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref:'datosClinicos',
+        required: false
+        }
+    ],
+    observaciones:{
         type: String,
-        required:true
+        required:false
     },
-    fechaIngresoUnidad:{
-        type: String,
-        required:true
-    },
-    telefono:{
-        type: String,
-        required:true
-    },
-    quimioterapia:{
-        type: String,
-        required:true
-    },
-    cicloNo:{
-        type: String,
-        required:true
-    },
-    fecha:{
-        type: String,
-        required:true
+    estado: {
+        type: Boolean,
+        required: false
     }
 });
 
