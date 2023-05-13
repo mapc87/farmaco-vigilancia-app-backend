@@ -7,19 +7,19 @@ const pacienteSchema = mongoose.Schema({
     },
     noRegistro:{
         type: String,
-        required:true
+        required:false
     },
     dpi:{
         type: String,
-        required:true
+        required:false
     },
     sexo:{
         type: String,
-        required:true
+        required:false
     },
     etnia:{
         type: String,
-        required:true
+        required:false
     },
     deptoNacimiento:{
         type: String,
