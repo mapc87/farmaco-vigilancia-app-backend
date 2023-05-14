@@ -57,13 +57,10 @@ const pacienteSchema = mongoose.Schema({
         type: Date,
         required:false
     },
-    datosClinicos:[
-        {
-        type: mongoose.Schema.Types.ObjectId, 
-        ref:'datosClinicos',
+    datosClinicos:{        
+        type: Array, 
         required: false
-        }
-    ],
+    },
     observaciones:{
         type: String,
         required:false

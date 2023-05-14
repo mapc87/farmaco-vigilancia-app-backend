@@ -20,6 +20,10 @@ const datosClinicoSchema = mongoose.Schema({
     cicloNo:{
         type: String,
         required:false
+    },
+    farmacosUtilizados: {
+        type: Array,
+        required:false
     }
 })
 
