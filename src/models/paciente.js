@@ -68,7 +68,11 @@ const pacienteSchema = mongoose.Schema({
     estado: {
         type: Boolean,
         required: false
-    }
+    },
+    fechaNacimiento:{
+        type: Date,
+        required:false
+    },
 });
 
 module.exports = mongoose.model('pacientes', pacienteSchema);

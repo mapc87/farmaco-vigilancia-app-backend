@@ -51,7 +51,8 @@ router.put("/paciente/:id", (req, res)=>{
             telefonoEncargado,
             estado, 
             observaciones,
-            datosClinicos
+            datosClinicos,
+            fechaNacimiento
         } = req.body;
     pacienteSchema
         .updateOne({_id:id},{$set:{
@@ -71,7 +72,8 @@ router.put("/paciente/:id", (req, res)=>{
             telefonoEncargado,
             estado, 
             observaciones,
-            datosClinicos
+            datosClinicos,
+            fechaNacimiento
         }})
         .then((data)=> res.json(data))
         .catch((error) => res.json({message: error}))
