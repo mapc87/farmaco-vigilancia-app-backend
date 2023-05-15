@@ -16,6 +16,10 @@ const usuarioSchema = mongoose.Schema({
     rol:{
         type: String,
         required:true
+    },
+    estado:{
+        type: Boolean,
+        required:false
     }
 });
 

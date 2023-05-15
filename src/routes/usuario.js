@@ -24,6 +24,7 @@ router.get("/usuarios/:id", (req, res)=>{
 
 //create user
 router.post("/usuarios", (req, res)=>{
+    console.log(req.body)
     const user = usuarioSchema(req.body);
     user
         .save()
@@ -34,9 +35,9 @@ router.post("/usuarios", (req, res)=>{
 //update user
 router.put("/usuarios/:id", (req, res)=>{
     const {id} = req.params;
-    const {nombre, usuario, password, rol} = req.body;
+    const {nombre, usuario, password, rol, estado} = req.body;
     usuarioSchema
-        .updateOne({_id:id},{$set:{nombre, usuario, password, rol}})
+        .updateOne({_id:id},{$set:{nombre, usuario, password, rol, estado}})
         .then((data)=> res.json(data))
         .catch((error) => res.json({message: error}))
 });
