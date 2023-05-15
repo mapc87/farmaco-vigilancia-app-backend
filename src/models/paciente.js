@@ -70,7 +70,7 @@ const pacienteSchema = mongoose.Schema({
         required: false
     },
     fechaNacimiento:{
-        type: Date,
+        type: String,
         required:false
     },
 });
