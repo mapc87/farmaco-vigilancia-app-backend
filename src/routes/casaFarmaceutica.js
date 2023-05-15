@@ -24,7 +24,6 @@ router.get("/casaFarmaceutica/:id", (req, res)=>{
 
 //create farmaceutica
 router.post("/casaFarmaceutica", (req, res)=>{
-    console.log("servicio")
     const casaFarmaceutica = casaFarmaceuticaSchema(req.body);
     casaFarmaceutica
         .save()
@@ -34,7 +33,6 @@ router.post("/casaFarmaceutica", (req, res)=>{
 
 //update casa farmaceutica
 router.put("/casaFarmaceutica/:id", (req, res)=>{
-    console.log(req)
     const {id} = req.params;
     const {nombre, observaciones, estado} = req.body;
     casaFarmaceuticaSchema

@@ -24,7 +24,6 @@ router.get("/usuarios/:id", (req, res)=>{
 
 //create user
 router.post("/usuarios", (req, res)=>{
-    console.log(req.body)
     const user = usuarioSchema(req.body);
     user
         .save()
