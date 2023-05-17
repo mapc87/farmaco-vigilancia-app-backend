@@ -24,6 +24,10 @@ const farmacoSchema = mongoose.Schema({
     estado: {
         type: Boolean,
         required: false
+    },
+    evaluacionKarchaLassagna: {
+        type: Object,
+        required:false
     }
 });
 

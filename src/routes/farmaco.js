@@ -34,9 +34,21 @@ router.post("/farmaco", (req, res)=>{
 //update enfermedad
 router.put("/farmaco/:id", (req, res)=>{
     const {id} = req.params;
-    const {nombre, casa,  efectosAdversos, efectosAdversosNoReportados, observaciones, estado} = req.body;
+    const {nombre, 
+            casa,  
+            efectosAdversos, 
+            efectosAdversosNoReportados, 
+            observaciones, 
+            estado,
+            evaluacionKarchaLassagna} = req.body;
     farmacoSchema
-        .updateOne({_id:id},{$set:{nombre, casa,  efectosAdversos, efectosAdversosNoReportados, observaciones, estado}})
+        .updateOne({_id:id},{$set:{nombre, 
+                                    casa,  
+                                    efectosAdversos, 
+                                    efectosAdversosNoReportados,
+                                    observaciones, 
+                                    estado,
+                                    evaluacionKarchaLassagna}})
         .then((data)=> res.json(data))
         .catch((error) => res.json({message: error}))
 });
