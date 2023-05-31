@@ -73,6 +73,10 @@ const pacienteSchema = mongoose.Schema({
         type: String,
         required:false
     },
+    evaluacionKarchaLassagna: {
+        type: Object,
+        required:false
+    }
 });
 
 module.exports = mongoose.model('pacientes', pacienteSchema);

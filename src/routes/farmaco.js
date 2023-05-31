@@ -39,16 +39,14 @@ router.put("/farmaco/:id", (req, res)=>{
             efectosAdversos, 
             efectosAdversosNoReportados, 
             observaciones, 
-            estado,
-            evaluacionKarchaLassagna} = req.body;
+            estado} = req.body;
     farmacoSchema
         .updateOne({_id:id},{$set:{nombre, 
                                     casa,  
                                     efectosAdversos, 
                                     efectosAdversosNoReportados,
                                     observaciones, 
-                                    estado,
-                                    evaluacionKarchaLassagna}})
+                                    estado}})
         .then((data)=> res.json(data))
         .catch((error) => res.json({message: error}))
 });

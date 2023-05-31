@@ -24,11 +24,7 @@ const farmacoSchema = mongoose.Schema({
     estado: {
         type: Boolean,
         required: false
-    },
-    evaluacionKarchaLassagna: {
-        type: Object,
-        required:false
-    }
+    }    
 });
 
 module.exports = mongoose.model('farmacos', farmacoSchema);
