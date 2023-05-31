@@ -33,8 +33,6 @@ router.post("/paciente", (req, res)=>{
 
 //update casa farmaceutica
 router.put("/paciente/:id", (req, res)=>{
-    console.log(req);
-    console.log("llego");
     const {id} = req.params;
     const {
             deptoNacimiento, 
