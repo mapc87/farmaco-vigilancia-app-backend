@@ -73,7 +73,7 @@ const pacienteSchema = mongoose.Schema({
         type: String,
         required:false
     },
-    evaluacionKarchaLassagna: {
+    evaluacionKarchLassagna: {
         type: Object,
         required:false
     }

@@ -53,7 +53,7 @@ router.put("/paciente/:id", (req, res)=>{
             observaciones,
             datosClinicos,
             fechaNacimiento,
-            evaluacionKarchaLassagna
+            evaluacionKarchLassagna
         } = req.body;
     pacienteSchema
         .updateOne({_id:id},{$set:{
@@ -75,10 +75,10 @@ router.put("/paciente/:id", (req, res)=>{
             observaciones,
             datosClinicos,
             fechaNacimiento,
-            evaluacionKarchaLassagna
+            evaluacionKarchLassagna
         }})
         .then((data)=> res.json(data))
-        .catch((error) => res.json({message: error}))
+        .catch((error) => {res.json({message: error}); console.log(error)})
 });
 
 //delete farmaceutica
