@@ -34,9 +34,9 @@ router.post("/efectoAdverso", (req, res)=>{
 //update enfermedad
 router.put("/efectoAdverso/:id", (req, res)=>{
     const {id} = req.params;
-    const {nombre, observaciones, estado} = req.body;
+    const {nombre, observaciones, estado, reportado} = req.body;
     efectoAdversoSchema
-        .updateOne({_id:id},{$set:{nombre, observaciones, estado}})
+        .updateOne({_id:id},{$set:{nombre, observaciones, estado, reportado}})
         .then((data)=> res.json(data))
         .catch((error) => res.json({message: error}))
 });

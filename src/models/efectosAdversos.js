@@ -12,6 +12,10 @@ const efectosAdversosSchema = mongoose.Schema({
     estado:{
         type:Boolean,
         required:false
+    },
+    reportado:{
+        type:Boolean,
+        required:false
     }
 });
 
